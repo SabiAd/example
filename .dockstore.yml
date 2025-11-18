@@ -2,12 +2,11 @@ version: 1.2
 workflows:
   - name: Exercise5_fast
     subclass: WDL
-    primaryDescriptorPath: /advanced_methods_muni_fall_2025/Exercise5/HERRO_assembly/Exercise5_fast.wdl
+    primaryDescriptorPath: /Exercise5/HERRO_assembly/Exercise5_fast.wdl
     testParameterFiles:
-      - /advanced_methods_muni_fall_2025/Exercise5/HERRO_assembly/inputs_HP1.json
-
+      - /Exercise5/HERRO_assembly/inputs_HP1.json
   - name: Exercise5_slow
     subclass: WDL
-    primaryDescriptorPath: /advanced_methods_muni_fall_2025/Exercise5/HERRO_assembly/Exercise5_slow.wdl
+    primaryDescriptorPath: /Exercise5/HERRO_assembly/Exercise5_slow.wdl
     testParameterFiles:
-      - /advanced_methods_muni_fall_2025/Exercise5/HERRO_assembly/inputs_HP1.json
+      - /Exercise5/HERRO_assembly/inputs_HP1.json
