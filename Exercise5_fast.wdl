@@ -16,6 +16,10 @@ task SplitFasta {
     output {
         Array[File] fasta_parts = glob("parts/*.fasta")
     }
+
+    runtime {
+        docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
+    }
 }
 
 task Count_Ns {
@@ -30,6 +34,10 @@ task Count_Ns {
     output {
         Int n_count = read_int("countNS.txt")
     }
+
+    runtime {
+        docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
+    }
 }
 
 task SumInts {
@@ -43,6 +51,10 @@ task SumInts {
 
     output {
         Int total = read_int("total.txt")
+    }
+
+    runtime {
+        docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
     }
 }
 
@@ -67,9 +79,5 @@ workflow CountNs_fast {
 
     output {
         Int total_Ns = SumInts.total
-    }
-
-    runtime {
-        docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
     }
 }
