@@ -31,10 +31,8 @@ workflow CountNs_slow {
     output {
         Int total_Ns = Count_Ns.n_count
     }
-}
 
-runtime {
-    docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
-    cpu: 1
-    memory: "1 GB"
+    runtime {
+        docker: "biocontainers/seqtk:v1.3-4-deb_cv1"
+    }
 }
